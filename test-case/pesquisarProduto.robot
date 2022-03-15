@@ -1,12 +1,19 @@
 #Cenarios de teste
 #robot -d results logar.robot
+#Suite Setup
+#capturar CSS 
 ***Settings***
 
+Suite Setup     Abrir navegador
 Suite Teardown  close all browsers
-Resource   ../pages/pesquisarProduto.robot
+Resource    ../pages/pesquisarProduto.robot
+Resource    ../pages/resource.robot
+
 ***Test Cases***
 
+
 Cenario 1 - Realizar pesquisa sem descrever produto 
+    [Tags]     none
     Dado que estou no site automation practice
     Quando eu fizer uma busca por um produto
     Entao não serão exibidos produtos

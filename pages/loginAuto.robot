@@ -1,4 +1,6 @@
 #PageObject
+***Variables***
+${LOGIN_AUTO_TEXT_SUCESSO}  
 
 ***Settings***
 Library   SeleniumLibrary
@@ -38,6 +40,8 @@ Entao sistema deve exibir mensagem de erro
 E insiro login valido e senha incorreta
     Input Text  //*[@id="email"]     nosrednav@hotmail.com   
     Input Text  //*[@id="passwd"]    w3
+
+
 
 
 

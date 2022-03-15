@@ -1,5 +1,9 @@
 #Cenarios de teste
 #robot -d results logar.robot
+#variaveis ${}
+***Variables***
+
+
 ***Settings***
 
 Suite Teardown  close all browsers
