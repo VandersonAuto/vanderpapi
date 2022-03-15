@@ -16,25 +16,27 @@ Cenario 2 - Realizar login na pagina
     Quando Clico no botao sign in
     E insiro login e senha
     E clico no botao Sign Inserir
-    Entao mensagem deve ser exibida
-
-
+    Entao A pagina de logon deve ser exibida
 
 Cenario 3 - Inserir login invalido
+    Dado que estou no site automation practice
+    Quando Clico no botao sign in
+    E insiro login invalido
+    Entao a pagina deve exibir mensagem de erro
+
+Cenario 4 - Inserir password invalido
+    Dado que estou no site automation practice
+    Quando Clico no botao sign in
+    E insiro login valido e senha incorreta
+    Entao a pagina deve exibir mensagem de erro
+
+Cenario 5 - nao inserir login e senha 
 
 
+Cenario 6 - Esqueceu a senha 
 
 
-Cenario 4 - Inserir password ivalido
+Cenario 7 - botao home
 
 
-
-
-Cenario 5 - Esqueceu a senha 
-
-
-
-Cenario 6 - botao home
-
-
-Cenario 7 - Efetuar log off
+Cenario 8 - Efetuar log off
