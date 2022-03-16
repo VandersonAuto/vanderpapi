@@ -5,10 +5,12 @@
 
 
 ***Settings***
-
+Suite Setup     Abrir navegador
 Suite Teardown  close all browsers
 Resource   ../pages/pesquisarProduto.robot
 Resource   ../pages/LoginAuto.robot
+Resource   ../pages/resource.robot
+
 ***Test Cases***
 
 Cenario 1 - Acesso a pagina de login
@@ -23,17 +25,17 @@ Cenario 2 - Realizar login na pagina
     E clico no botao Sign 
     Entao A pagina de logon deve ser exibida
 
-Cenario 3 - Inserir login invalido
+Cenario 3 - Efetuar log off
+    #Dado que estou na pagina de autenticacao
+    Quando clicar no botao Sigh Out
+    Entao a pagina deve voltar a Autenticacao
+   
+Cenario 4 - Inserir login invalido
     Dado que estou no site automation practice
     Quando Clico no botao sign in
-    E insiro login invalido e senha valida
-    Entao a pagina deve exibir mensagem de erro
-
-Cenario 4 - Inserir password invalido
-    Dado que estou no site automation practice
-    Quando Clico no botao sign in
-    E insiro login valido e senha incorreta
-    Entao a pagina deve exibir mensagem de erro senha incorreta
+    E insiro login valido e login incorreto
+    E clico no botao para submeter login
+    Entao a pagina deve exibir mensagem de erro login invalido
 
 Cenario 5 - nao inserir login e senha 
     Dado que estou no site automation practice
@@ -56,11 +58,9 @@ Cenario 7 - botao home
     Entao a pagina principal devera ser exibida
 
 
-Cenario 8 - Efetuar log off
+Cenario 8 - Inserir senha invalida
     Dado que estou no site automation practice
     Quando Clico no botao sign in
-    E insiro login e senha
-    E clico no botao Sign Inserir
-    Entao A pagina de logon deve ser exibida
-    E Clicar no botao sign out 
-    E sistema deve voltar para a pagina de login
+    E insiro login valido e senha invalida
+    E clico no botao para submeter login
+    Entao a pagina deve exibir mensagem de erro login invalido

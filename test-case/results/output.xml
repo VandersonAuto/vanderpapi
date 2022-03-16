@@ -1,184 +1,383 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.8.5 on win32)" generated="20220315 16:53:35.114" rpa="false" schemaversion="2">
-<suite id="s1" name="pesquisarProduto" source="C:\Users\Vanderson\vanderpapi\test-case\pesquisarProduto.robot">
+<robot generator="Robot 4.1.3 (Python 3.8.5 on win32)" generated="20220316 01:17:14.452" rpa="false" schemaversion="2">
+<suite id="s1" name="loginAuto" source="C:\Users\Vanderson\vanderpapi\test-case\loginAuto.robot">
 <kw name="Abrir navegador" library="resource" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>url:</arg>
 <arg>gc</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220315 16:53:35.395" level="INFO">Opening browser 'gc' to base url 'url:'.</msg>
-<status status="PASS" starttime="20220315 16:53:35.395" endtime="20220315 16:53:36.642"/>
+<msg timestamp="20220316 01:17:14.719" level="INFO">Opening browser 'gc' to base url 'url:'.</msg>
+<status status="PASS" starttime="20220316 01:17:14.718" endtime="20220316 01:17:16.029"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:35.394" endtime="20220315 16:53:36.642"/>
+<status status="PASS" starttime="20220316 01:17:14.718" endtime="20220316 01:17:16.030"/>
 </kw>
-<test id="s1-t1" name="Cenario 1 - Realizar pesquisa sem descrever produto">
+<test id="s1-t1" name="Cenario 1 - Acesso a pagina de login">
 <kw name="Dado que estou no site automation practice" library="pesquisarProduto">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>http://automationpractice.com/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220315 16:53:36.646" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20220315 16:53:36.646" endtime="20220315 16:53:41.734"/>
+<msg timestamp="20220316 01:17:16.033" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20220316 01:17:16.032" endtime="20220316 01:17:19.573"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:36.645" endtime="20220315 16:53:41.734"/>
+<status status="PASS" starttime="20220316 01:17:16.031" endtime="20220316 01:17:19.573"/>
 </kw>
-<kw name="Quando eu fizer uma busca por um produto" library="pesquisarProduto">
+<kw name="Quando Clico no botao sign in" library="LoginAuto">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="searchbox"]/button</arg>
+<arg>${LOGIN_AUTO_BOTAO_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220315 16:53:41.735" level="INFO">Clicking element '//*[@id="searchbox"]/button'.</msg>
-<status status="PASS" starttime="20220315 16:53:41.735" endtime="20220315 16:53:41.788"/>
+<msg timestamp="20220316 01:17:19.575" level="INFO">Clicking element '//*[@class="login"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:19.574" endtime="20220316 01:17:21.378"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:41.734" endtime="20220315 16:53:41.788"/>
+<status status="PASS" starttime="20220316 01:17:19.574" endtime="20220316 01:17:21.379"/>
 </kw>
-<kw name="Entao não serão exibidos produtos" library="pesquisarProduto">
+<kw name="Entao a pagina de login e exibida" library="LoginAuto">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>${PESQUISAR_PRODUTO_TEXT_FALHA}</arg>
-<arg>Please enter a search keyword</arg>
+<arg>//*[@id="center_column"]/h1</arg>
+<arg>AUTHENTICATION</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220315 16:53:41.791" level="INFO">Verifying element '//*[@class="alert alert-warning"]' contains exact text 'Please enter a search keyword'.</msg>
-<status status="PASS" starttime="20220315 16:53:41.790" endtime="20220315 16:53:44.128"/>
+<msg timestamp="20220316 01:17:21.380" level="INFO">Verifying element '//*[@id="center_column"]/h1' contains exact text 'AUTHENTICATION'.</msg>
+<status status="PASS" starttime="20220316 01:17:21.380" endtime="20220316 01:17:21.403"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:41.789" endtime="20220315 16:53:44.128"/>
+<status status="PASS" starttime="20220316 01:17:21.379" endtime="20220316 01:17:21.403"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:36.642" endtime="20220315 16:53:44.128"/>
+<status status="PASS" starttime="20220316 01:17:16.030" endtime="20220316 01:17:21.404"/>
 </test>
-<test id="s1-t2" name="Cenario 2 - Realizar pesquisa com sucesso">
+<test id="s1-t2" name="Cenario 2 - Realizar login na pagina">
 <kw name="Dado que estou no site automation practice" library="pesquisarProduto">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>http://automationpractice.com/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220315 16:53:44.131" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20220315 16:53:44.130" endtime="20220315 16:53:46.132"/>
+<msg timestamp="20220316 01:17:21.406" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20220316 01:17:21.406" endtime="20220316 01:17:22.749"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:44.130" endtime="20220315 16:53:46.133"/>
+<status status="PASS" starttime="20220316 01:17:21.406" endtime="20220316 01:17:22.749"/>
 </kw>
-<kw name="E insiro na busca Printed Chiffon Dress" library="pesquisarProduto">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@id="search_query_top"]</arg>
-<arg>Printed Chiffon Dress</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220315 16:53:46.134" level="INFO">Typing text 'Printed Chiffon Dress' into text field '//*[@id="search_query_top"]'.</msg>
-<status status="PASS" starttime="20220315 16:53:46.134" endtime="20220315 16:53:46.224"/>
-</kw>
-<status status="PASS" starttime="20220315 16:53:46.133" endtime="20220315 16:53:46.224"/>
-</kw>
-<kw name="Quando eu fizer uma busca por um produto" library="pesquisarProduto">
+<kw name="Quando Clico no botao sign in" library="LoginAuto">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="searchbox"]/button</arg>
+<arg>${LOGIN_AUTO_BOTAO_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220315 16:53:46.225" level="INFO">Clicking element '//*[@id="searchbox"]/button'.</msg>
-<status status="PASS" starttime="20220315 16:53:46.225" endtime="20220315 16:53:47.583"/>
+<msg timestamp="20220316 01:17:22.750" level="INFO">Clicking element '//*[@class="login"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:22.750" endtime="20220316 01:17:24.209"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:46.225" endtime="20220315 16:53:47.583"/>
+<status status="PASS" starttime="20220316 01:17:22.749" endtime="20220316 01:17:24.210"/>
 </kw>
-<kw name="Entao serão exibidos os os vestidos buscados" library="pesquisarProduto">
+<kw name="E insiro login e senha" library="LoginAuto">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="email"]</arg>
+<arg>nosrednav@hotmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:24.211" level="INFO">Typing text 'nosrednav@hotmail.com' into text field '//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:24.210" endtime="20220316 01:17:24.290"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="passwd"]</arg>
+<arg>w3s1h2t4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:24.290" level="INFO">Typing text 'w3s1h2t4' into text field '//*[@id="passwd"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:24.290" endtime="20220316 01:17:24.365"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:24.210" endtime="20220316 01:17:24.365"/>
+</kw>
+<kw name="E clico no botao Sign" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="SubmitLogin"]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:24.366" level="INFO">Clicking element '//*[@id="SubmitLogin"]/span'.</msg>
+<status status="PASS" starttime="20220316 01:17:24.366" endtime="20220316 01:17:25.926"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:24.365" endtime="20220316 01:17:25.926"/>
+</kw>
+<kw name="Entao A pagina de logon deve ser exibida" library="LoginAuto">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>//*[@id="center_column"]/h1/span[1]</arg>
-<arg>"PRINTED CHIFFON DRESS"</arg>
+<arg>//*[@class="page-heading"]</arg>
+<arg>MY ACCOUNT</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220315 16:53:47.584" level="INFO">Verifying element '//*[@id="center_column"]/h1/span[1]' contains exact text '"PRINTED CHIFFON DRESS"'.</msg>
-<status status="PASS" starttime="20220315 16:53:47.584" endtime="20220315 16:53:47.606"/>
+<msg timestamp="20220316 01:17:25.927" level="INFO">Verifying element '//*[@class="page-heading"]' contains exact text 'MY ACCOUNT'.</msg>
+<status status="PASS" starttime="20220316 01:17:25.927" endtime="20220316 01:17:25.948"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:47.584" endtime="20220315 16:53:47.606"/>
+<status status="PASS" starttime="20220316 01:17:25.927" endtime="20220316 01:17:25.948"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:44.129" endtime="20220315 16:53:47.607"/>
+<status status="PASS" starttime="20220316 01:17:21.405" endtime="20220316 01:17:25.949"/>
 </test>
-<test id="s1-t3" name="Cenario 3 - Realizar busca de produto inexistente">
-<kw name="Dado que estou no site automation practice" library="pesquisarProduto">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>http://automationpractice.com/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220315 16:53:47.609" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20220315 16:53:47.609" endtime="20220315 16:53:51.560"/>
-</kw>
-<status status="PASS" starttime="20220315 16:53:47.608" endtime="20220315 16:53:51.560"/>
-</kw>
-<kw name="E inserir na busca produto inexistente" library="pesquisarProduto">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@id="search_query_top"]</arg>
-<arg>qssa</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220315 16:53:51.562" level="INFO">Typing text 'qssa' into text field '//*[@id="search_query_top"]'.</msg>
-<status status="PASS" starttime="20220315 16:53:51.561" endtime="20220315 16:53:51.653"/>
-</kw>
-<status status="PASS" starttime="20220315 16:53:51.561" endtime="20220315 16:53:51.653"/>
-</kw>
-<kw name="Quando eu fizer uma busca por um produto" library="pesquisarProduto">
+<test id="s1-t3" name="Cenario 3 - Efetuar log off">
+<kw name="Quando clicar no botao Sigh Out" library="LoginAuto">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="searchbox"]/button</arg>
+<arg>//*[@class="logout"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220315 16:53:51.654" level="INFO">Clicking element '//*[@id="searchbox"]/button'.</msg>
-<status status="PASS" starttime="20220315 16:53:51.654" endtime="20220315 16:53:52.548"/>
+<msg timestamp="20220316 01:17:25.951" level="INFO">Clicking element '//*[@class="logout"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:25.951" endtime="20220316 01:17:28.982"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:51.654" endtime="20220315 16:53:52.549"/>
+<status status="PASS" starttime="20220316 01:17:25.951" endtime="20220316 01:17:28.983"/>
 </kw>
-<kw name="Entao não serão exibidos produtos com o nome qssa" library="pesquisarProduto">
+<kw name="Entao a pagina deve voltar a Autenticacao" library="LoginAuto">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>${PESQUISAR_PRODUTO_TEXT_FALHA}</arg>
-<arg>No results were found for your search "qssa"</arg>
+<arg>//*[@class="page-heading"]</arg>
+<arg>AUTHENTICATION</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220315 16:53:52.550" level="INFO">Verifying element '//*[@class="alert alert-warning"]' contains exact text 'No results were found for your search "qssa"'.</msg>
-<status status="PASS" starttime="20220315 16:53:52.550" endtime="20220315 16:53:52.576"/>
+<msg timestamp="20220316 01:17:28.984" level="INFO">Verifying element '//*[@class="page-heading"]' contains exact text 'AUTHENTICATION'.</msg>
+<status status="PASS" starttime="20220316 01:17:28.983" endtime="20220316 01:17:29.001"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:52.549" endtime="20220315 16:53:52.576"/>
+<status status="PASS" starttime="20220316 01:17:28.983" endtime="20220316 01:17:29.001"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:47.608" endtime="20220315 16:53:52.576"/>
+<status status="PASS" starttime="20220316 01:17:25.950" endtime="20220316 01:17:29.001"/>
 </test>
-<test id="s1-t4" name="Cenario 4 - Realizar busca por categoria">
+<test id="s1-t4" name="Cenario 4 - Inserir login invalido">
 <kw name="Dado que estou no site automation practice" library="pesquisarProduto">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>http://automationpractice.com/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220315 16:53:52.579" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20220315 16:53:52.579" endtime="20220315 16:53:55.868"/>
+<msg timestamp="20220316 01:17:29.003" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20220316 01:17:29.003" endtime="20220316 01:17:30.869"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:52.578" endtime="20220315 16:53:55.868"/>
+<status status="PASS" starttime="20220316 01:17:29.003" endtime="20220316 01:17:30.869"/>
 </kw>
-<kw name="E inserir na busca categoria t-shirt" library="pesquisarProduto">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@id="search_query_top"]</arg>
-<arg>t-shirt</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220315 16:53:55.869" level="INFO">Typing text 't-shirt' into text field '//*[@id="search_query_top"]'.</msg>
-<status status="PASS" starttime="20220315 16:53:55.869" endtime="20220315 16:53:55.946"/>
-</kw>
-<status status="PASS" starttime="20220315 16:53:55.869" endtime="20220315 16:53:55.946"/>
-</kw>
-<kw name="Quando eu fizer uma busca por um produto" library="pesquisarProduto">
+<kw name="Quando Clico no botao sign in" library="LoginAuto">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="searchbox"]/button</arg>
+<arg>${LOGIN_AUTO_BOTAO_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220315 16:53:55.947" level="INFO">Clicking element '//*[@id="searchbox"]/button'.</msg>
-<status status="PASS" starttime="20220315 16:53:55.947" endtime="20220315 16:53:58.428"/>
+<msg timestamp="20220316 01:17:30.871" level="INFO">Clicking element '//*[@class="login"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:30.871" endtime="20220316 01:17:32.091"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:55.946" endtime="20220315 16:53:58.428"/>
+<status status="PASS" starttime="20220316 01:17:30.870" endtime="20220316 01:17:32.091"/>
 </kw>
-<kw name="Entao serão exibidos os resultados de busca para o produto t-shirt" library="pesquisarProduto">
+<kw name="E insiro login valido e login incorreto" library="LoginAuto">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="email"]</arg>
+<arg>nosrednav@hotmail.co</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:32.093" level="INFO">Typing text 'nosrednav@hotmail.co' into text field '//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:32.092" endtime="20220316 01:17:32.167"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="passwd"]</arg>
+<arg>w3s1h2t4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:32.168" level="INFO">Typing text 'w3s1h2t4' into text field '//*[@id="passwd"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:32.167" endtime="20220316 01:17:32.246"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:32.092" endtime="20220316 01:17:32.246"/>
+</kw>
+<kw name="E clico no botao para submeter login" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="icon-lock left"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:32.247" level="INFO">Clicking element '//*[@class="icon-lock left"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:32.247" endtime="20220316 01:17:33.060"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:32.246" endtime="20220316 01:17:33.060"/>
+</kw>
+<kw name="Entao a pagina deve exibir mensagem de erro login invalido" library="LoginAuto">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>//*[@id="center_column"]/h1/span[1]</arg>
-<arg>"T-SHIRT"</arg>
+<arg>//*[@id="center_column"]/div[1]/p</arg>
+<arg>There is 1 error</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220315 16:53:58.429" level="INFO">Verifying element '//*[@id="center_column"]/h1/span[1]' contains exact text '"T-SHIRT"'.</msg>
-<status status="PASS" starttime="20220315 16:53:58.429" endtime="20220315 16:53:58.451"/>
+<msg timestamp="20220316 01:17:33.062" level="INFO">Verifying element '//*[@id="center_column"]/div[1]/p' contains exact text 'There is 1 error'.</msg>
+<status status="PASS" starttime="20220316 01:17:33.062" endtime="20220316 01:17:33.083"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:58.429" endtime="20220315 16:53:58.451"/>
+<status status="PASS" starttime="20220316 01:17:33.061" endtime="20220316 01:17:33.083"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:52.578" endtime="20220315 16:53:58.451"/>
+<status status="PASS" starttime="20220316 01:17:29.002" endtime="20220316 01:17:33.083"/>
+</test>
+<test id="s1-t5" name="Cenario 5 - nao inserir login e senha">
+<kw name="Dado que estou no site automation practice" library="pesquisarProduto">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220316 01:17:33.085" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20220316 01:17:33.085" endtime="20220316 01:17:34.485"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:33.085" endtime="20220316 01:17:34.485"/>
+</kw>
+<kw name="Quando Clico no botao sign in" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_AUTO_BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:34.486" level="INFO">Clicking element '//*[@class="login"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:34.486" endtime="20220316 01:17:35.746"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:34.486" endtime="20220316 01:17:35.746"/>
+</kw>
+<kw name="E nao insiro valores e clico no botao sign in" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="SubmitLogin"]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:35.748" level="INFO">Clicking element '//*[@id="SubmitLogin"]/span'.</msg>
+<status status="PASS" starttime="20220316 01:17:35.747" endtime="20220316 01:17:36.637"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:35.747" endtime="20220316 01:17:36.637"/>
+</kw>
+<kw name="Entao sistema deve exibir mensagem de erro" library="LoginAuto">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//*[@id="center_column"]/div[1]/ol/li</arg>
+<arg>An email address required.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220316 01:17:36.638" level="INFO">Verifying element '//*[@id="center_column"]/div[1]/ol/li' contains exact text 'An email address required.'.</msg>
+<status status="PASS" starttime="20220316 01:17:36.638" endtime="20220316 01:17:36.660"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:36.637" endtime="20220316 01:17:36.660"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:33.084" endtime="20220316 01:17:36.660"/>
+</test>
+<test id="s1-t6" name="Cenario 6 - Esqueceu a senha">
+<kw name="Dado que estou no site automation practice" library="pesquisarProduto">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220316 01:17:36.662" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20220316 01:17:36.662" endtime="20220316 01:17:38.178"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:36.662" endtime="20220316 01:17:38.179"/>
+</kw>
+<kw name="Quando Clico no botao sign in" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_AUTO_BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:38.180" level="INFO">Clicking element '//*[@class="login"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:38.180" endtime="20220316 01:17:39.465"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:38.179" endtime="20220316 01:17:39.465"/>
+</kw>
+<kw name="E Clico no botao Forgot your password?" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@href="http://automationpractice.com/index.php?controller=password"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:39.466" level="INFO">Clicking element '//*[@href="http://automationpractice.com/index.php?controller=password"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:39.466" endtime="20220316 01:17:40.291"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:39.465" endtime="20220316 01:17:40.291"/>
+</kw>
+<kw name="E insiro email e clico no botao Retrieve Password" library="LoginAuto">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@class="form-control"]</arg>
+<arg>nosrednav@hotmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:40.293" level="INFO">Typing text 'nosrednav@hotmail.com' into text field '//*[@class="form-control"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:40.292" endtime="20220316 01:17:40.381"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:40.292" endtime="20220316 01:17:40.381"/>
+</kw>
+<kw name="Entao sistema deve exibir mensagem" library="LoginAuto">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//*[@id="center_column"]/div/p</arg>
+<arg>Please enter the email address you used to register. We will then send you a new password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220316 01:17:40.382" level="INFO">Verifying element '//*[@id="center_column"]/div/p' contains exact text 'Please enter the email address you used to register. We will then send you a new password.'.</msg>
+<status status="PASS" starttime="20220316 01:17:40.382" endtime="20220316 01:17:40.405"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:40.381" endtime="20220316 01:17:40.406"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:36.661" endtime="20220316 01:17:40.406"/>
+</test>
+<test id="s1-t7" name="Cenario 7 - botao home">
+<kw name="Dado que estou no site automation practice" library="pesquisarProduto">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220316 01:17:40.408" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20220316 01:17:40.408" endtime="20220316 01:17:41.780"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:40.408" endtime="20220316 01:17:41.781"/>
+</kw>
+<kw name="Quando Clico no botao sign in" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_AUTO_BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:41.782" level="INFO">Clicking element '//*[@class="login"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:41.781" endtime="20220316 01:17:43.270"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:41.781" endtime="20220316 01:17:43.270"/>
+</kw>
+<kw name="E Clico no botao Return to home" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="icon-home"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:43.271" level="INFO">Clicking element '//*[@class="icon-home"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:43.271" endtime="20220316 01:17:44.931"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:43.270" endtime="20220316 01:17:44.931"/>
+</kw>
+<kw name="Entao a pagina principal devera ser exibida" library="LoginAuto">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220316 01:17:44.937" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20220316 01:17:44.932" endtime="20220316 01:17:44.937"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:44.931" endtime="20220316 01:17:44.938"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:40.407" endtime="20220316 01:17:44.938"/>
+</test>
+<test id="s1-t8" name="Cenario 8 - Inserir senha invalida">
+<kw name="Dado que estou no site automation practice" library="pesquisarProduto">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220316 01:17:44.941" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20220316 01:17:44.940" endtime="20220316 01:17:46.317"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:44.940" endtime="20220316 01:17:46.318"/>
+</kw>
+<kw name="Quando Clico no botao sign in" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_AUTO_BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:46.319" level="INFO">Clicking element '//*[@class="login"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:46.319" endtime="20220316 01:17:48.035"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:46.318" endtime="20220316 01:17:48.035"/>
+</kw>
+<kw name="E insiro login valido e senha invalida" library="LoginAuto">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="email"]</arg>
+<arg>nosrednav@hotmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:48.037" level="INFO">Typing text 'nosrednav@hotmail.com' into text field '//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:48.036" endtime="20220316 01:17:48.192"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="passwd"]</arg>
+<arg>w3s1h2t</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:48.192" level="INFO">Typing text 'w3s1h2t' into text field '//*[@id="passwd"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:48.192" endtime="20220316 01:17:48.281"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:48.036" endtime="20220316 01:17:48.282"/>
+</kw>
+<kw name="E clico no botao para submeter login" library="LoginAuto">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="icon-lock left"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220316 01:17:48.283" level="INFO">Clicking element '//*[@class="icon-lock left"]'.</msg>
+<status status="PASS" starttime="20220316 01:17:48.282" endtime="20220316 01:17:49.100"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:48.282" endtime="20220316 01:17:49.100"/>
+</kw>
+<kw name="Entao a pagina deve exibir mensagem de erro login invalido" library="LoginAuto">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//*[@id="center_column"]/div[1]/p</arg>
+<arg>There is 1 error</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220316 01:17:49.101" level="INFO">Verifying element '//*[@id="center_column"]/div[1]/p' contains exact text 'There is 1 error'.</msg>
+<status status="PASS" starttime="20220316 01:17:49.101" endtime="20220316 01:17:49.135"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:49.101" endtime="20220316 01:17:49.136"/>
+</kw>
+<status status="PASS" starttime="20220316 01:17:44.939" endtime="20220316 01:17:49.136"/>
 </test>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20220315 16:53:58.453" endtime="20220315 16:54:00.610"/>
+<status status="PASS" starttime="20220316 01:17:49.138" endtime="20220316 01:17:51.300"/>
 </kw>
-<status status="PASS" starttime="20220315 16:53:35.116" endtime="20220315 16:54:00.610"/>
+<status status="PASS" starttime="20220316 01:17:14.453" endtime="20220316 01:17:51.300"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="pesquisarProduto">pesquisarProduto</stat>
+<stat pass="8" fail="0" skip="0" id="s1" name="loginAuto">loginAuto</stat>
 </suite>
 </statistics>
 <errors>
